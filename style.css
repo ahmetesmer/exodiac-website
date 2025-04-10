@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform-style: preserve-3d;
+}
+
+.star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    will-change: transform, opacity, width, height;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    font-size: clamp(3rem, 10vw, 8rem);
+    color: #ff0000;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-bottom: 0.5rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.studios {
+    color: #ffffff;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    letter-spacing: 15px;
+    margin-bottom: 2rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.social-btn {
+    color: #fff;
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-btn:hover {
+    color: #ff0000;
+    transform: translateY(-5px);
+    background: rgba(255, 0, 0, 0.2);
+    border-color: rgba(255, 0, 0, 0.5);
+}
+
+.footer {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    z-index: 2;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.footer p {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .social-links {
+        gap: 1rem;
+    }
+    
+    .social-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
+    }
+    
+    .title {
+        margin-bottom: 0.3rem;
+    }
+
+    .studios {
+        letter-spacing: 10px;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer {
+        bottom: 10px;
+        font-size: 0.7rem;
+    }
+} 
