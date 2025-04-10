@@ -5,11 +5,12 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     background: #000;
     color: #fff;
     overflow: hidden;
     height: 100vh;
+    height: 100dvh; /* Mobil için dinamik viewport height */
     perspective: 1000px;
 }
 
@@ -25,16 +26,14 @@ body {
 
 .star {
     position: absolute;
-    background: #fff;
     width: 2px;
     height: 2px;
+    background: #fff;
     border-radius: 50%;
     pointer-events: none;
     will-change: transform, opacity;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
-    transition: opacity 0.3s ease;
-    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
 .content {
@@ -44,7 +43,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100dvh; /* Mobil için dinamik viewport height */
     text-align: center;
     padding: 20px;
 }
@@ -55,10 +55,10 @@ body {
     font-weight: 900;
     letter-spacing: 2px;
     margin-bottom: 0.5rem;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     -webkit-text-stroke: 1px rgba(255, 0, 0, 0.3);
+    white-space: nowrap;
 }
 
 .studios {
@@ -66,9 +66,9 @@ body {
     font-size: clamp(1.2rem, 4vw, 1.8rem);
     letter-spacing: 12px;
     margin-bottom: 2rem;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .social-links {
@@ -78,6 +78,7 @@ body {
     margin-top: 2rem;
     justify-content: center;
     padding: 0 15px;
+    max-width: 100%;
 }
 
 .social-btn {
@@ -143,8 +144,8 @@ body {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.9);
     z-index: 2;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
     letter-spacing: 1px;
+    padding: 0 10px;
 }
 
 .footer p {
@@ -157,23 +158,31 @@ body {
 }
 
 @media (max-width: 768px) {
+    .content {
+        padding: 15px;
+        justify-content: center;
+    }
+
     .social-links {
-        gap: 1.2rem;
+        gap: 15px;
         margin-top: 1.5rem;
+        padding: 0;
+        width: 100%;
+        max-width: 320px; /* Mobilde maksimum genişlik */
     }
     
     .social-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 1.4rem;
-        border-radius: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        border-radius: 12px;
     }
     
     .title {
         font-weight: 900;
         letter-spacing: 1px;
         margin-bottom: 0.2rem;
-        -webkit-text-stroke: 0.5px rgba(255, 0, 0, 0.3);
+        -webkit-text-stroke: 1px rgba(255, 0, 0, 0.3);
     }
 
     .studios {
@@ -184,11 +193,12 @@ body {
 
     .footer {
         bottom: 10px;
-        font-size: 0.7rem;
-        padding: 0 10px;
+        font-size: 0.65rem;
     }
 
     .footer p {
-        padding: 8px 15px;
+        padding: 8px 12px;
+        max-width: 90%;
+        margin: 0 auto;
     }
 } 
