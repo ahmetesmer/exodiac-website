@@ -46,22 +46,25 @@ body {
 }
 
 .title {
-    font-size: clamp(3rem, 10vw, 8rem);
+    font-size: clamp(3.5rem, 12vw, 8rem);
     color: #ff0000;
-    font-weight: 800;
-    letter-spacing: 5px;
+    font-weight: 900;
+    letter-spacing: 2px;
     margin-bottom: 0.5rem;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-text-stroke: 1px rgba(255, 0, 0, 0.3);
 }
 
 .studios {
     color: #ffffff;
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    letter-spacing: 15px;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    letter-spacing: 12px;
     margin-bottom: 2rem;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     text-transform: uppercase;
+    font-weight: 600;
 }
 
 .social-links {
@@ -70,6 +73,7 @@ body {
     gap: 2.5rem;
     margin-top: 2rem;
     justify-content: center;
+    padding: 0 15px;
 }
 
 .social-btn {
@@ -151,26 +155,36 @@ body {
 @media (max-width: 768px) {
     .social-links {
         gap: 1.2rem;
+        margin-top: 1.5rem;
     }
     
     .social-btn {
-        width: 55px;
-        height: 55px;
-        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
         border-radius: 15px;
     }
     
     .title {
-        margin-bottom: 0.3rem;
+        font-weight: 900;
+        letter-spacing: 1px;
+        margin-bottom: 0.2rem;
+        -webkit-text-stroke: 0.5px rgba(255, 0, 0, 0.3);
     }
 
     .studios {
-        letter-spacing: 10px;
+        letter-spacing: 8px;
         margin-bottom: 1.5rem;
+        font-weight: 600;
     }
 
     .footer {
         bottom: 10px;
         font-size: 0.7rem;
+        padding: 0 10px;
+    }
+
+    .footer p {
+        padding: 8px 15px;
     }
 } 
